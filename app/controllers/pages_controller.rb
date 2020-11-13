@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
   def index
-    @title = 'Welcome'
+    if current_user
+      @title = 'Welcome, ' + current_user.username
+    else
+      @title = 'Welcome'
+    end
   end
   def about
     @title = 'About Us'

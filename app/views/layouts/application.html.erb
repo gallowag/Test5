@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Charity</title>
+    <title>Keenan's Charity</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -27,6 +27,17 @@
       </ul>
     </div>
     <div class="nav pull-right">
+        <% if current_user %>
+           <ul class="navbar-nav mr-auto">
+              <li class="nav-item nav-link"><%= link_to "My Account", profile_path %></</li>
+              <li class="nav-item nav-link"><%= link_to "Log Out", logout_path, method: "delete" %></li>
+           </ul>
+         <% else %>
+           <ul class="navbar-nav mr-auto">
+              <li class="nav-item nav-link"><%= link_to "Login", 'login' %></li>
+              <li class="nav-item nav-link"><%= link_to "Sign Up", 'signup' %></li>
+           </ul>
+        <% end %>
     </div>
     </nav>
     <div class="jumbotron container">
