@@ -22,8 +22,15 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item nav-link"><%= link_to "Home", home_path %></li>
+        <li class="nav-item nav-link"><%= link_to "Gallery", gallery_path %></li>
         <li class="nav-item nav-link"><%= link_to "Opportunities", opportunities_path %></li>
         <li class="nav-item nav-link"><%= link_to "About", about_path %></li>
+        <% if current_user && current_user.admin? %>
+          <li class="nav-item nav-link"><%= link_to "Designers", designers_path %></li>
+        <% end %>
+        <% if current_user && current_user.accepted_designer? %>
+          <li class="nav-item nav-link"><%= link_to "Upload", new_image_path %></li>
+        <% end %>
       </ul>
     </div>
     <div class="nav pull-right">

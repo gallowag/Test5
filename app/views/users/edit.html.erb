@@ -1,4 +1,4 @@
-<div class="signup">
+<div class="edit">
   <div class="container">
     <div class="form">
 
@@ -14,20 +14,14 @@
       <%= f.label :email %><br>
       <%= f.text_field(:email, {:class => 'form-control'}) %>
     </div>
-    <div class="field">
-      <%= f.label :password %><br>
-      <%= f.password_field(:password, {:class => 'form-control'}) %>
-    </div>
-    <div class="field">
-      <%= f.hidden_field(:privilege, value: @privilege) %>
-    </div>
     <div class="actions">
       <br>
-      <%= f.submit("Create Account", {:class => 'btn btn-primary'}) %>
+      <%= f.submit("Submit Changes", {:class => 'btn btn-primary'}) %>
     </div>
     <% end %>
 
-    <p>Already have an account? <%= link_to "Login", login_path %></p>
+    <br>
+    <%= link_to "Cancel", profile_path %>
 
     </div>
   </div>

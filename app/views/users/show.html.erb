@@ -1,7 +1,10 @@
 <div class="profile">
   <div class="container">
-    <h2><%= @user.username %></h2>
-    <p>Role: <%= @role %><br>Email: <%= @user.email %></p>
-    <%="Edit Profile"%>
+    <h1><%= @title %></h1>
+    <br>
+    <p>Username: <strong><%= @user.username %></strong><br>
+       Role: <strong><%= @role %></strong><br>
+       Email: <strong><%= @user.email %></strong></p>
+    <%=link_to "Edit Profile", edit_path%>
   </div>
 </div>

@@ -1,0 +1,18 @@
+<div class="apply">
+  <div class="container">
+    <div class="form">
+      <h1><%= @title %></h1>
+      <p><%= @content %></p>
+
+      <%= form_for(@user) do |f| %>
+      <div class="field">
+        <%= f.hidden_field(:privilege, value: @privilege) %>
+      </div>
+      <div class="actions">
+        <br>
+        <%= f.submit("Apply", {:class => 'btn btn-primary'}) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

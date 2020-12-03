@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag(@image.pic, style: 'object-fit:cover; width:230px; height:230px') %>
+<br>
+<strong>Description: </strong>
+<p><%= @image.description %></p>
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Delete', @image, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
+<%= link_to 'Gallery', images_path %>
